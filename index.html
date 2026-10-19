@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emily Belz</title>
+<meta name="description" content="Emily Belz is editorial director of news at Christianity Today. Writer, reporter, editor based in New York City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F6F8F9;
+    --ink: #122029;
+    --muted: #53636E;
+    --rule: #C9D3D9;
+    --link: #0B5A66;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0F171C;
+      --ink: #E7EDF0;
+      --muted: #9AAAB5;
+      --rule: #2A3943;
+      --link: #6CC3CF;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.1875rem;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  a { color: inherit; }
+  a:focus-visible {
+    outline: 3px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Top bar */
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-top: 1.75rem;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+  }
+  .bar .name {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .bar nav { display: flex; gap: 1.5rem; }
+  .bar nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .bar nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Hero */
+  .hero { padding: clamp(3rem, 9vw, 6.5rem) 0 clamp(3rem, 8vw, 5.5rem); }
+
+  h1 {
+    margin: 0 0 clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    font-size: clamp(3rem, 10.5vw, 7.25rem);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    max-width: 11ch;
+  }
+
+  .intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 20rem);
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: start;
+  }
+  .intro-text { max-width: 36rem; }
+  .intro-text p { margin: 0 0 1.1em; }
+  .intro-text p:last-child { margin-bottom: 0; }
+  .intro-text .lead { font-size: 1.375rem; line-height: 1.5; }
+
+  .portrait { margin: 0; }
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 3px;
+    background: var(--rule);
+  }
+
+  /* Sections */
+  section { padding: clamp(2.5rem, 6vw, 4rem) 0; border-top: 1px solid var(--rule); }
+
+  h2 {
+    margin: 0 0 2rem;
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+
+  h3 {
+    margin: 2.75rem 0 0.5rem;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  h2 + h3 { margin-top: 0; }
+
+  .clips { list-style: none; margin: 0; padding: 0; }
+  .clips li {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 2rem;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .clips li:last-child { border-bottom: 1px solid var(--rule); }
+
+  .clips .title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+  }
+  .clips .title a {
+    text-decoration: underline;
+    text-decoration-color: var(--link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 5px;
+  }
+  .clips .title a:hover { text-decoration-thickness: 3px; }
+
+  .clips .meta {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: var(--muted);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .clips .meta em { font-family: var(--serif); font-size: 1.05rem; }
+
+  .tv-role { color: var(--muted); font-family: var(--sans); font-size: 0.95rem; }
+
+  /* Skills + contact */
+  .plain { margin: 0; max-width: 36rem; }
+  .contact a {
+    font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+    letter-spacing: -0.01em;
+    text-decoration-color: var(--link);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 6px;
+    overflow-wrap: anywhere;
+  }
+  .contact a:hover { text-decoration-thickness: 3px; }
+
+  footer { padding: 2rem 0 3rem; }
+
+  @media (max-width: 44rem) {
+    body { font-size: 1.125rem; }
+    .intro { grid-template-columns: 1fr; }
+    .portrait { order: -1; max-width: 17rem; }
+    .clips li { grid-template-columns: 1fr; }
+    .clips .meta { text-align: left; white-space: normal; }
+    .clips .title { font-size: 1.35rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="bar">
+    <a class="name" href="#top" id="top">Emily Belz</a>
+    <nav aria-label="Page sections">
+      <a href="#portfolio">Portfolio</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Writer, Reporter, Editor</h1>
+
+      <div class="intro">
+        <div class="intro-text">
+          <p class="lead">Hello! I’m currently the editorial director of news at <em>Christianity Today</em>, the largest Christian news magazine in the US.</p>
+          <p>I also oversee our daily newsletter team that goes to 170,000 subscribers every morning. I like to find good stories or help reporters do the same.</p>
+          <p>I live in New York City.</p>
+        </div>
+        <figure class="portrait">
+          <img src="headshot.jpg" alt="Portrait of Emily Belz" width="640" height="800" onerror="this.closest('figure').hidden = true">
+        </figure>
+      </div>
+    </div>
+
+    <section id="portfolio" aria-labelledby="portfolio-h">
+      <h2 id="portfolio-h">Portfolio</h2>
+
+      <h3>Features</h3>
+      <ul class="clips">
+        <li>
+          <span class="title"><a href="https://www.christianitytoday.com/2024/02/train-derailment-east-palestine-ohio-disaster-information/?utm_medium=widgetsocial" target="_blank" rel="noopener">How Doubt Derailed a Train Town</a></span>
+          <span class="meta"><em>Christianity Today</em>, 2024</span>
+        </li>
+        <li>
+          <span class="title"><a href="https://www.christianitytoday.com/2023/04/politics-saved-25-million-pepfar-anniversary-bush/?utm_medium=widgetsocial" target="_blank" rel="noopener">When Politics Saved 25 Million Lives</a></span>
+          <span class="meta"><em>Christianity Today</em>, 2023</span>
+        </li>
+        <li>
+          <span class="title"><a href="https://www.nytimes.com/2026/04/20/nyregion/new-york-chess-kids.html?unlocked_article_code=1.JVE.59Nm.gEdshwi_Tv6p&amp;smid=url-share" target="_blank" rel="noopener">A Day in the Life of New York City’s Young Chess Stars</a></span>
+          <span class="meta"><em>The New York Times</em>, 2026</span>
+        </li>
+        <li>
+          <span class="title"><a href="https://www.christianitytoday.com/2026/01/annunciation-school-shooting-victims-recovery-minneapolis-church/?utm_medium=widgetsocial" target="_blank" rel="noopener">After Their Kids Survived the Annunciation Shooting, Parents Search for Healing</a></span>
+          <span class="meta"><em>Christianity Today</em>, 2026</span>
+        </li>
+        <li>
+          <span class="title"><a href="https://www.christianitytoday.com/2024/07/archegos-founder-bill-hwang-guilty-wall-street/?utm_medium=widgetsocial" target="_blank" rel="noopener">Christian Billionaire Found Guilty of Massive Wall Street Fraud</a></span>
+          <span class="meta"><em>Christianity Today</em>, 2024</span>
+        </li>
+      </ul>
+
+      <h3>Podcasts</h3>
+      <ul class="clips">
+        <li>
+          <span class="title"><a href="https://goodfaith.org/podcasts/the-epstein-files-conspiracy-theories-and-the-church/" target="_blank" rel="noopener">The Epstein Files, Conspiracy Theories, and the Church</a></span>
+          <span class="meta"><em>Good Faith</em>, 2025</span>
+        </li>
+        <li>
+          <span class="title"><a href="https://www.youtube.com/watch?v=_lUs1-v2E6w" target="_blank" rel="noopener">Churches Helping Immigrant Families in Minnesota</a></span>
+          <span class="meta"><em>The Bulletin</em>, 2026</span>
+        </li>
+      </ul>
+
+      <h3>TV</h3>
+      <ul class="clips">
+        <li>
+          <span class="title"><a href="https://www.imdb.com/title/tt10715148/?ref_=ttfc_ov_bk" target="_blank" rel="noopener">Netflix documentary series <em>The Family</em></a></span>
+          <span class="meta">Consultant, 2019</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-h">
+      <h2 id="skills-h">Skills</h2>
+      <p class="plain">Proficient in WordPress, InCopy, ActiveCampaign</p>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-h">
+      <h2 id="contact-h">Contact</h2>
+      <a href="mailto:ebelznews@gmail.com">ebelznews@gmail.com</a>
+    </section>
+  </main>
+
+  <footer></footer>
+</div>
+
+</body>
+</html>
